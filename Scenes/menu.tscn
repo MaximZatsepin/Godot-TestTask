@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://cf5kejnwb1pva"]
+
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_fml1i"]
+[ext_resource type="Texture2D" uid="uid://dje63rk5i5jxk" path="res://Sprites/MenuBG.png" id="1_tmqn5"]
+[ext_resource type="Texture2D" uid="uid://jidevsa8i7uy" path="res://Sprites/button/button1.png" id="2_kexwh"]
+[ext_resource type="Texture2D" uid="uid://tyoyd8s6m4dy" path="res://Sprites/button/button2.png" id="3_6u603"]
+[ext_resource type="Texture2D" uid="uid://cu2ajm1a7i488" path="res://Sprites/button/button3.png" id="4_wqrud"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fml1i")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tmqn5")
+
+[node name="TextureButton" type="TextureButton" parent="TextureRect"]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_kexwh")
+texture_pressed = ExtResource("3_6u603")
+texture_hover = ExtResource("4_wqrud")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="TextureRect/TextureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Play!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="TextureRect/TextureButton" to="." method="_on_texture_button_pressed"]
