@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://cpoe1mrv2wgxw"]
 
-[ext_resource type="Texture2D" uid="uid://dfx72wiikrvlr" path="res://Sprites/char/idle/atm1.png" id="1_ittwf"]
+[ext_resource type="Texture2D" path="res://Sprites/char/idle/atm1.png" id="1_ittwf"]
 [ext_resource type="Script" path="res://Sprites/player.gd" id="1_xmr55"]
-[ext_resource type="Texture2D" uid="uid://d2yoq20i5tycj" path="res://Sprites/char/idle/atm2.png" id="2_rdxgd"]
+[ext_resource type="Texture2D" path="res://Sprites/char/idle/atm2.png" id="2_rdxgd"]
 [ext_resource type="Texture2D" uid="uid://defi2qjik1ist" path="res://Sprites/char/atm1.png" id="3_er7s0"]
 [ext_resource type="Texture2D" uid="uid://bbc30fl7tlqul" path="res://Sprites/char/atm2.png" id="4_kb82n"]
 [ext_resource type="Texture2D" uid="uid://dhkn68t0ayn7k" path="res://Sprites/char/atm3.png" id="5_ol51r"]

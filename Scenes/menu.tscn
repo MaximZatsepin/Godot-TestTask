@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://co7ga1um5lexi"]
+[gd_scene load_steps=6 format=3 uid="uid://co7ga1um5lexi"]
 
 [ext_resource type="Texture2D" uid="uid://cj1y2clhhs0j7" path="res://Sprites/MenuBG.png" id="1_od312"]
+[ext_resource type="Script" path="res://Scenes/menu.gd" id="1_yq8j7"]
 [ext_resource type="Texture2D" uid="uid://jidevsa8i7uy" path="res://Sprites/button/button1.png" id="2_182y7"]
 [ext_resource type="Texture2D" uid="uid://tyoyd8s6m4dy" path="res://Sprites/button/button2.png" id="3_dm5tb"]
 [ext_resource type="Texture2D" uid="uid://cu2ajm1a7i488" path="res://Sprites/button/button3.png" id="4_vbi3d"]
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_yq8j7")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -51,3 +53,5 @@ theme_override_font_sizes/font_size = 20
 text = "Play"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
