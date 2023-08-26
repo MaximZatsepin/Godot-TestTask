@@ -1,10 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjjjgkvhtyuek"]
+[gd_scene load_steps=9 format=3 uid="uid://dstmrmb2o8ffq"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_jmhka"]
 [ext_resource type="PackedScene" uid="uid://dk6ql4lls2rh6" path="res://Scenes/maps.tscn" id="1_wqc60"]
 [ext_resource type="AudioStream" uid="uid://7buunjiph6px" path="res://Sprites/music.mp3" id="3_co7um"]
+[ext_resource type="Texture2D" uid="uid://jidevsa8i7uy" path="res://Sprites/button/button1.png" id="4_oi8cw"]
+[ext_resource type="Texture2D" uid="uid://dje63rk5i5jxk" path="res://Sprites/MenuBG.png" id="4_yx255"]
+[ext_resource type="Texture2D" uid="uid://tyoyd8s6m4dy" path="res://Sprites/button/button2.png" id="5_xyufi"]
+[ext_resource type="Texture2D" uid="uid://cu2ajm1a7i488" path="res://Sprites/button/button3.png" id="6_mehcg"]
+[ext_resource type="Script" path="res://Scripts/backButton.gd" id="8_hcrre"]
 
-[node name="Game" type="Node2D"]
+[node name="game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_jmhka")
 
 [node name="Maps" parent="." instance=ExtResource("1_wqc60")]
@@ -12,6 +23,69 @@ script = ExtResource("1_jmhka")
 [node name="music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_co7um")
 volume_db = -20.0
-autoplay = true
 
-[connection signal="finished" from="music" to="." method="_on_music_finished"]
+[node name="WinGame" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_yx255")
+
+[node name="winText" type="Label" parent="WinGame"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -72.0
+offset_right = 80.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.792157, 0.0666667, 1)
+theme_override_font_sizes/font_size = 25
+text = "You win!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="backButton" type="TextureButton" parent="WinGame"]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -72.0
+offset_right = 64.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4_oi8cw")
+texture_pressed = ExtResource("5_xyufi")
+texture_hover = ExtResource("6_mehcg")
+stretch_mode = 0
+script = ExtResource("8_hcrre")
+
+[node name="buttonText" type="Label" parent="WinGame/backButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Return to 
+menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="WinGame/backButton" to="WinGame/backButton" method="_on_pressed"]

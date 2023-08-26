@@ -219,20 +219,22 @@ layer_1/tile_data = PackedInt32Array(1245184, 589824, 4, 1245193, 589824, 5, 983
 [node name="Player" parent="." instance=ExtResource("2_4sg5x")]
 position = Vector2(20, 273.5)
 
-[node name="coin" parent="." instance=ExtResource("2_dbcc6")]
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="coin" parent="Coins" instance=ExtResource("2_dbcc6")]
 position = Vector2(129.5, 284.5)
 
-[node name="coin2" parent="." instance=ExtResource("2_dbcc6")]
+[node name="coin2" parent="Coins" instance=ExtResource("2_dbcc6")]
 position = Vector2(119.5, 225)
 
-[node name="coin3" parent="." instance=ExtResource("2_dbcc6")]
+[node name="coin3" parent="Coins" instance=ExtResource("2_dbcc6")]
 position = Vector2(26, 168.5)
 
-[node name="coin4" parent="." instance=ExtResource("2_dbcc6")]
+[node name="coin4" parent="Coins" instance=ExtResource("2_dbcc6")]
 position = Vector2(133.5, 124.5)
 
-[node name="coin5" parent="." instance=ExtResource("2_dbcc6")]
+[node name="coin5" parent="Coins" instance=ExtResource("2_dbcc6")]
 position = Vector2(41.5, 88)
 
-[node name="coin6" parent="." instance=ExtResource("2_dbcc6")]
+[node name="coin6" parent="Coins" instance=ExtResource("2_dbcc6")]
 position = Vector2(19.5, 14)
